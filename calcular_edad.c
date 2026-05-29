@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX 5 //hasta donde va la i
+
 /*ingresar edades sumarlas y promediarlas*/
 int i, sumarVector, edadMayor=0;
 int edad[5];
@@ -11,6 +13,7 @@ void calcularPromedio();
 void calcularMayorEdad();
 void calcularMenorEdad();
 int main (){
+	
 	generarVector();
 	calcularPromedio();
 	calcularMayorEdad();
@@ -20,14 +23,14 @@ int main (){
 
 void generarVector(){
 	i=0;
-	for (i=0; i<5; i++){
+	for (i=0; i<MAX; i++){
 		printf("Ingresar la edad\n");	
 		scanf("%d", &edad[i]);	
 	}
 };
 void calcularPromedio(){
 	i=0;
-	for (i=0; i<5; i++){
+	for (i=0; i<MAX; i++){
 		sumarVector=sumarVector+ edad[i];
 	}
 	printf("La suma de las edades es de %d \n",sumarVector);
@@ -38,7 +41,7 @@ void calcularPromedio(){
 void calcularMayorEdad(){
 	int posicionMayor;
 	i=0;
-	for (i=0; i<5; i++){
+	for (i=0; i<MAX; i++){
 		if (edad[i]> edadMayor){
 			edadMayor=edad[i];
 			posicionMayor=i;
@@ -53,7 +56,7 @@ void calcularMayorEdad(){
 void calcularMenorEdad(){
 	i=0;
 	int edadMenor=150, posicionMenor;
-	for (i=0; i<5; i++){
+	for (i=0; i<MAX; i++){
 		if (edad[i]< edadMenor){
 			edadMenor=edad[i];
 			posicionMenor=i+1;
